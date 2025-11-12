@@ -1,3 +1,5 @@
+/* 251113목 수정 */
+
 *{box-sizing:border-box}
 
 html,body{
@@ -24,7 +26,7 @@ a{text-decoration:none;color:inherit}
 .sub{margin:.25rem 0 0;color:#000;font-size:14px}
 .site-footer{padding:24px 0;color:#000;border-top:1px solid #eee}
 
-/* 카드 박스 */
+/* 박스 */
 .card{
   background:#fff;
   border:1px solid #e6e6f0;
@@ -41,14 +43,14 @@ h2{margin:0 0 12px;font-size:18px}
 .grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
 .grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
 
-/* 좁은 화면: 2칸/3칸 → 1칸 */
+/* 좁은 화면 레이아웃 */
 @media (max-width:900px){
   .grid.two, .grid.three{
     grid-template-columns:1fr;
   }
 }
 
-/* 폼 요소 */
+/* 폼 */
 label{
   display:flex;
   flex-direction:column;
@@ -80,9 +82,7 @@ small{color:#000;font-weight:400}
 .between{justify-content:space-between}
 .gap{gap:8px}
 
-/* ==========================================
-   버튼: 기본은 세로 정렬(좁은 화면 기준)
-   ========================================== */
+/* 좁은 화면 기준으로 버튼 세로 정렬 */
 .btn{
   display:block;
   width:100%;
@@ -111,7 +111,7 @@ small{color:#000;font-weight:400}
   margin-top:10px;
 }
 
-/* 넓은 화면(데스크톱)에서는 가로 정렬 */
+/* 넓은 화면(데스크톱)에서 가로 정렬 */
 @media (min-width:900px){
   .btn{
     display:inline-block;
@@ -125,7 +125,7 @@ small{color:#000;font-weight:400}
   }
 }
 
-/* 모든 버튼(홈 포함) 검정색 통일 */
+/* 모든 버튼 검정색 통일 */
 .btn, .btn-home, footer a.btn{
   background:#000 !important;
   color:#fff !important;
