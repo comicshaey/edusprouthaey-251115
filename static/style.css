@@ -27,32 +27,32 @@ small{color:#000;font-weight:400}
 .btn.primary{background:#2563eb;border-color:#2563eb;color:#fff}
 .btn.ghost{background:transparent}
 
-  /* 버튼 기본 디자인 */
-  .btn{
-    display:inline-block;
-    padding:12px 20px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    background:#000;
-    color:#fff;
-    border:none;
-    transition:0.2s;
-  }
+/* 버튼 기본 디자인 */
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:600;
+  background:#000;
+  color:#fff;
+  border:none;
+  transition:0.2s;
+}
 
-  /* 버튼 간격 */
-  .btn + .btn{margin-left:10px}
+/* 버튼 간격 */
+.btn + .btn{margin-left:10px}
 
-  /* 마우스 올렸을 때 */
-  .btn:hover{
-    background:#222;
-    transform:translateY(-2px);
-  }
+/* 마우스 올렸을 때 */
+.btn:hover{
+  background:#222;
+  transform:translateY(-2px);
+}
 
-  body{color:#111;background:#fff; font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Noto Sans KR","맑은 고딕",sans-serif}
-  h1{font-size:1.75rem; margin:18px 0 8px}
-  .muted{color:#555; font-size:0.95rem}
-  footer{margin:40px 0 20px; color:#333}
+body{color:#111;background:#fff; font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Apple SD Gothic Neo", "Noto Sans KR","맑은 고딕",sans-serif}
+h1{font-size:1.75rem; margin:18px 0 8px}
+.muted{color:#555; font-size:0.95rem}
+footer{margin:40px 0 20px; color:#333}
 
 .table-wrap{overflow:auto;border:1px solid #ececf3;border-radius:12px}
 table{border-collapse:collapse;min-width:980px;width:100%}
@@ -69,7 +69,6 @@ tfoot td{background:#fafafb;font-weight:700}
 .kicker{font-size:12px;letter-spacing:.06em;color:#000;text-transform:uppercase;margin-bottom:6px}
 .footer-note{margin-top:6px;white-space:pre-line}
 
-
 /* === 모든 버튼(홈 포함) 검정색 통일 === */
 .btn, .btn-home, footer a.btn{
   background:#000 !important;
@@ -77,3 +76,12 @@ tfoot td{background:#fafafb;font-weight:700}
   border:1px solid #000 !important;
 }
 .btn:hover{ filter:brightness(1.2); }
+
+/* ===========================
+   제목 공통 스타일 (귀여운 고주무관 웹 전체)
+   =========================== */
+h1 {
+  font-size: clamp(1.5rem, 4vw, 28px);
+  margin: 0 0 12px;
+  text-align: center;
+}
