@@ -324,3 +324,11 @@ tfoot td{background:#fafafb;font-weight:700}
 .segment-row select {
   font-size: 13px;
 }
+
+
+.section {
+  padding-bottom: 20px; /* 여백 */
+  border-bottom: 1px solid #ddd; /* 구분선 */
+  margin-bottom: 28px; /* 섹션 사이 간격 */
+}
+
