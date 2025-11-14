@@ -224,11 +224,11 @@ function buildMonthConfigTable() {
     '월별 인건비 (청소원 선택시 입력)',
     '월별 유급 근무일수',
     '기본급',
+    '직무관련수당·위험수당',
     '정액급식비',
-    '위험수당',
-    '주휴수당 반영 기타 수당 1',
-    '기타 수당 2',
-    '기타 수당 3'
+    '근속수당·가산수당',
+    '상여·성과급 월 환산액',
+    '명절휴가비 등 기타 수당'
   ].forEach((txt) => {
     const th = document.createElement('th');
     th.textContent = txt;
@@ -440,7 +440,7 @@ function recalc() {
   let holidayTotal = 0;
   let prorataTotal = 0;
 
-  // ----- 2) 방학중근무수당 (조리직) -----
+  // ----- 2) 방학중근무수당 (조리종사원) -----
   if (jobType === 'cook' || jobType === 'cook-helper') {
     let firstRate = null;
     let sameRate = true;
@@ -468,7 +468,7 @@ function recalc() {
       }
       restTotalText.textContent = formatKRW(restTotal);
       restRuleText.textContent =
-        '각 근무일의 유급 근로시간이 4시간 이하이면 10,000원, 4시간 초과이면 20,000원으로 일자별 합산했습니다. (조리직 기준)';
+        '각 근무일의 유급 근로시간이 4시간 이하이면 10,000원, 4시간 초과이면 20,000원으로 일자별 합산했습니다. (조리종사원 기준)';
     }
   } else {
     restPerDayText.textContent = '-';
@@ -521,7 +521,7 @@ function recalc() {
         '각 달의 월 인건비와 기준 일수, 그리고 근로일수를 입력하면 청소원 인건비 일할계산을 해줍니다.';
     }
   } else {
-    // 조리직: 주휴수당 계산
+    // 조리종사원: 주휴수당 계산
     const holidayDates = [];
 
     Object.keys(weeksMap).forEach((key) => {
