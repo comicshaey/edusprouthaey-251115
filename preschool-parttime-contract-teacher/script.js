@@ -61,7 +61,7 @@ function eachDate(startStr, endStr, cb) {
   }
 }
 
-// --------- 봉급표 (호봉 → 8시간 기준 월 기본급) ---------
+// 봉급표
 const payTable = {
   1: 1915100,
   2: 1973100,
@@ -184,7 +184,7 @@ function addNoAfRow() {
   tbody.appendChild(tr);
 }
 
-// --------- 월별 근무일수 자동 계산 ---------
+//월별 근무일수 자동 계산 
 function buildMonthTable() {
   const monthError = document.getElementById("monthError");
   monthError.textContent = "";
@@ -250,7 +250,7 @@ function buildMonthTable() {
 
   const monthKeys = Object.keys(monthMap).sort();
   if (monthKeys.length === 0) {
-    monthError.textContent = "선택된 근무 요일 기준으로 근무일이 한 건도 없습니다.";
+    monthError.textContent = "선택된 근무 요일 기준으로 근무일 없음";
     return;
   }
 
@@ -289,7 +289,7 @@ function buildMonthTable() {
   wrap.appendChild(div);
 }
 
-// --------- 월별 인건비 계산 ---------
+// 월별 인건비 계산
 function calcMonthly() {
   const err = document.getElementById("calcError");
   err.textContent = "";
@@ -304,7 +304,7 @@ function calcMonthly() {
     document.getElementById("vacationBaseDays").value
   );
   if (semBaseDays <= 0 || vacBaseDays <= 0) {
-    err.textContent = "학기 중/방학 중 월 기준 근무일수를 1 이상으로 입력해주세요.";
+    err.textContent = "근무일수 입력 바람";
     return;
   }
 
