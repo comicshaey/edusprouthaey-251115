@@ -111,7 +111,7 @@ function buildDaysTable() {
     const p = document.createElement('p');
     p.className = 'hint';
     p.style.padding = '10px 12px';
-    p.textContent = '근무 시작일자와 종료일자를 올바르게 입력하면 날짜 목록이 생성됩니다.';
+    p.textContent = '방학 시작일자와 종료일자 입력하면 날짜 목록 생성됨.';
     daysContainer.appendChild(p);
     return;
   }
@@ -210,7 +210,7 @@ function buildMonthConfigTable() {
     const p = document.createElement('p');
     p.className = 'hint';
     p.style.padding = '10px 12px';
-    p.textContent = '근무 시작일자와 종료일자를 입력하면, 여기에 달별 설정 행이 나타납니다.';
+    p.textContent = '방학 시작일자와 종료일자를 입력하면 인건비 항목 생성됨.';
     monthConfigContainer.appendChild(p);
     return;
   }
