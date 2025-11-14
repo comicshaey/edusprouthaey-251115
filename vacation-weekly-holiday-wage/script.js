@@ -183,7 +183,7 @@ function buildDaysTable() {
   daysContainer.appendChild(table);
 }
 
-// ===== 달별 인건비 설정 테이블 생성 =====
+// ===== 월별 인건비 설정 테이블 생성 =====
 
 function monthKeysBetween(start, end) {
   const keys = [];
@@ -220,15 +220,15 @@ function buildMonthConfigTable() {
   const trHead = document.createElement('tr');
 
   [
-    '달(YYYY-MM)',
-    '월 인건비 (청소원 일할계산용)',
-    '기준 일수',
+    '월(YYYY-MM)',
+    '월별 인건비 (청소원 선택시 입력)',
+    '월별 유급 근무일수',
     '기본급',
-    '직무관련수당 등',
     '정액급식비',
-    '근속수당',
-    '정기상여 월할분',
-    '명절휴가비 월할분'
+    '위험수당',
+    '주휴수당 반영 기타 수당 1',
+    '기타 수당 2',
+    '기타 수당 3'
   ].forEach((txt) => {
     const th = document.createElement('th');
     th.textContent = txt;
@@ -259,7 +259,7 @@ function buildMonthConfigTable() {
     tdMonthlyPay.appendChild(inpMonthlyPay);
     tr.appendChild(tdMonthlyPay);
 
-    // 기준 일수
+    // 월별 유급 근무일수
     const tdDays = document.createElement('td');
     const inpDays = document.createElement('input');
     inpDays.type = 'number';
@@ -283,12 +283,12 @@ function buildMonthConfigTable() {
       return inp;
     };
 
-    const inpBase = makeCell('month-basePay');         // 기본급
-    const inpDuty = makeCell('month-dutyAllow');      // 직무관련수당 등
-    const inpMeal = makeCell('month-mealAllow');      // 정액급식비
-    const inpLong = makeCell('month-longAllow');      // 근속수당
-    const inpBonus = makeCell('month-bonusMonthly');  // 정기상여 월할분
-    const inpHoliday = makeCell('month-holidayBonus'); // 명절휴가비 월할분
+    const inpBase = makeCell('month-basePay');
+    const inpDuty = makeCell('month-dutyAllow');
+    const inpMeal = makeCell('month-mealAllow');
+    const inpLong = makeCell('month-longAllow');
+    const inpBonus = makeCell('month-bonusMonthly');
+    const inpHoliday = makeCell('month-holidayBonus');
 
     // 값 바뀌면 재계산
     [
@@ -311,7 +311,7 @@ function buildMonthConfigTable() {
   monthConfigContainer.appendChild(table);
 }
 
-// 달별 설정값 읽어서 map으로 넘겨주기
+// 월별 설정값 읽어서 map으로 전송
 function getMonthConfigMap() {
   const map = {};
   const rows = monthConfigContainer.querySelectorAll('.month-row');
